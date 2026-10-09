@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KM Dinesh B</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        .about-section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .heading span {
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .heading h1 {
+            font-size: 42px;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+
+        .heading p {
+            color: #94a3b8;
+        }
+
+        .intro {
+            background: #111c30;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #26364e;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+
+        .highlight {
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .section-title {
+            color: #ffffff;
+            font-size: 26px;
+            margin: 35px 0 20px;
+            border-left: 4px solid #38bdf8;
+            padding-left: 12px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #111c30;
+            padding: 24px;
+            border-radius: 14px;
+            border: 1px solid #26364e;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            margin-bottom: 8px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #17324a;
+            color: #7dd3fc;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin: 5px 4px 5px 0;
+        }
+
+        .goal {
+            margin-top: 35px;
+            padding: 28px;
+            text-align: center;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #123047, #14213d);
+            border: 1px solid #28516b;
+        }
+
+        .goal h2 {
+            color: #4ade80;
+            margin-bottom: 10px;
+        }
+
+        .goal p {
+            color: #dbeafe;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #94a3b8;
+            border-top: 1px solid #26364e;
+        }
+
+        @media (max-width: 650px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .heading h1 {
+                font-size: 32px;
+            }
+
+            .about-section {
+                padding: 45px 16px;
+            }
+
+            .intro {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="about-section">
+
+        <div class="heading">
+            <span>Get to Know Me</span>
+            <h1>About Me</h1>
+            <p>Cricketer | Software Developer | GATE Aspirant</p>
+        </div>
+
+        <div class="intro">
+            <h2>Hello, I'm a Cricketer & Tech Enthusiast!</h2>
+
+            <p>
+                I am passionate about both <span class="highlight">cricket
+                and technology</span>. My cricket journey started in 2020,
+                and I have continued to develop my skills through competitive
+                cricket and district-level tournaments.
+            </p>
+
+            <p>
+                Alongside cricket, I am building my career in software
+                development. I started with a Java Developer internship,
+                progressed to a Software Developer role at TECH S CUBE,
+                and am moving forward as a Full Stack Engineer.
+            </p>
+
+            <p>
+                I am also a <span class="highlight">GATE aspirant</span>,
+                focused on continuous learning, technical growth,
+                discipline, teamwork, and achieving my career goals.
+            </p>
+        </div>
+
+        <h2 class="section-title">Cricket Journey</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Cricket Career</h3>
+                <p><strong>Playing Since:</strong> 2020</p>
+                <p><strong>Tournament:</strong> YSCL U19 South Zone</p>
+                <p><strong>Association:</strong> SDCA, Salem District
+                    Cricket Association</p>
+                <p>
+                    Representing my cricket journey through competitive
+                    cricket and different district division levels.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Division Experience</h3>
+                <ul>
+                    <li><strong>2022–2023:</strong> 5th Division</li>
+                    <li><strong>2023–2024:</strong> 3rd Division</li>
+                    <li><strong>2024–2026:</strong> 1st Division</li>
+                    <li><strong>2026–2027:</strong> 2nd Division</li>
+                </ul>
+                <p style="margin-top: 12px;">
+                    <span class="badge">SDCA</span>
+                    <span class="badge">Salem District</span>
+                    <span class="badge">Competitive Cricket</span>
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Awards & Achievements</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>🏆 PEFI Rising Star</h3>
+                <p><strong>Year:</strong> 2025</p>
+                <p>
+                    Recognized with the PEFI Rising Star award
+                    for my cricket journey.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🏏 T20 Championship</h3>
+                <p><strong>Year:</strong> 2023</p>
+                <p>
+                    Participated in the Puducherry T20 Championship
+                    as part of my cricket experience.
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Java Developer Intern</h3>
+                <p><strong>October 2025 – April 2026</strong></p>
+                <p>Duration: 6 Months</p>
+                <p>
+                    Gained practical experience in Java development,
+                    programming fundamentals, debugging, and
+                    software development workflows.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Software Developer</h3>
+                <p><strong>TECH S CUBE</strong></p>
+                <p><strong>May 2026 – September 2026</strong></p>
+                <p>
+                    Worked on software development tasks, strengthened
+                    programming skills, and gained practical industry
+                    experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Full Stack Engineer</h3>
+                <p><strong>October 2026 – Present</strong></p>
+                <p>
+                    Continuing my professional journey in full-stack
+                    development, building technical skills across
+                    frontend and backend technologies.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Technical Interests</h3>
+                <p>
+                    <span class="badge">Java</span>
+                    <span class="badge">Spring Boot</span>
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">SQL</span>
+                    <span class="badge">Full Stack Development</span>
+                </p>
+                <p>
+                    Interested in developing reliable, useful,
+                    and user-friendly software applications.
+                </p>
+            </div>
+        </div>
+
+        <div class="goal">
+            <h2>My Goal</h2>
+            <p>
+                To grow as a skilled Full Stack Engineer while continuing
+                my cricket journey and preparing for GATE. I believe
+                discipline, consistency, teamwork, and continuous learning
+                are the keys to success in both sports and technology.
+            </p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Cricket in My Heart. Technology in My Mind.</p>
+    </footer>
+
+</body>
+</html>

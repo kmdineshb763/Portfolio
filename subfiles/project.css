@@ -1,0 +1,279 @@
+
+/* =========================================
+   HIGH-RESOLUTION 3D PROJECT CAROUSEL
+   ========================================= */
+
+.carousel-3d {
+    --radius: 1100px;
+
+    position: relative;
+    width: 400px;
+    height: 540px;
+    margin: 0 auto;
+
+    transform-style: preserve-3d;
+    animation: rotate 60s linear infinite;
+}
+
+/* =========================================
+   PROJECT CARDS - MORE SPACING
+   ========================================= */
+
+.carousel-3d .card {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(145deg, #101820, #1b2933);
+
+    border: 1px solid rgba(0, 242, 255, 0.5);
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+
+    transform:
+        rotateY(calc(var(--i) * 24deg))
+        translateZ(var(--radius));
+
+    backface-visibility: visible;
+
+    transition:
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Card hover */
+.carousel-3d .card:hover {
+    border-color: #00f2ff;
+
+    box-shadow:
+        0 0 30px rgba(0, 242, 255, 0.4),
+        0 30px 70px rgba(0, 0, 0, 0.85);
+}
+
+/* =========================================
+   HIGH-QUALITY PROJECT IMAGES
+   ========================================= */
+
+.carousel-3d .card img {
+    display: block;
+
+    width: 100%;
+    height: 70%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 17px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    image-rendering: auto;
+}
+
+/* =========================================
+   PROJECT TITLES
+   ========================================= */
+
+.carousel-3d .card h3 {
+    width: 100%;
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    margin: 8px 0;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.project-buttons {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+    flex-wrap: wrap;
+
+    margin-bottom: 5px;
+}
+
+.project-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    color: #000000;
+    background: linear-gradient(90deg, #00f260, #0575e6);
+
+    border-radius: 25px;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    box-shadow: 0 5px 18px rgba(0, 255, 255, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-buttons a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.6);
+}
+
+/* =========================================
+   ROTATION
+   ========================================= */
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.carousel-3d:hover {
+    animation-play-state: paused;
+}
+
+/* =========================================
+   DESKTOP: 1201px AND ABOVE
+   ========================================= */
+
+@media screen and (min-width: 1201px) {
+    .carousel-3d {
+        --radius: 1100px;
+
+        width: 400px;
+        height: 540px;
+
+        animation-duration: 60s;
+    }
+}
+
+/* =========================================
+   LAPTOPS: 769px - 1200px
+   ========================================= */
+
+@media screen and (min-width: 769px)
+and (max-width: 1200px) {
+    .carousel-3d {
+        --radius: 950px;
+
+        width: 350px;
+        height: 480px;
+
+        animation-duration: 65s;
+    }
+}
+
+/* =========================================
+   TABLETS: 577px - 768px
+   ========================================= */
+
+@media screen and (min-width: 577px)
+and (max-width: 768px) {
+    .carousel-3d {
+        --radius: 760px;
+
+        width: 300px;
+        height: 420px;
+
+        animation-duration: 70s;
+    }
+
+    .carousel-3d .card {
+        padding: 12px;
+    }
+
+    .carousel-3d .card h3 {
+        font-size: 19px;
+    }
+
+    .project-buttons {
+        gap: 8px;
+    }
+
+    .project-buttons a {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================
+   MOBILE: UP TO 576px
+   ========================================= */
+
+@media screen and (max-width: 576px) {
+    .carousel-3d {
+        --radius: 570px;
+
+        width: 245px;
+        height: 350px;
+
+        animation-duration: 75s;
+    }
+
+    .carousel-3d .card {
+        padding: 10px;
+        border-radius: 18px;
+    }
+
+    .carousel-3d .card img {
+        height: 65%;
+        border-radius: 12px;
+    }
+
+    .carousel-3d .card h3 {
+        font-size: 16px;
+        min-height: 30px;
+    }
+
+    .project-buttons {
+        gap: 6px;
+    }
+
+    .project-buttons a {
+        padding: 7px 9px;
+        font-size: 11px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-3d {
+        animation: none;
+    }
+}

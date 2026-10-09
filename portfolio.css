@@ -1,0 +1,1079 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ========================================NAV WRAPPER========================================================== */
+.nav-wrapper {
+  position: fixed !important;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+/* NAVBAR */
+.nav-3d {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transform-style: preserve-3d;
+}
+
+/* LOGO */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00eaff;
+}
+
+/* LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 0;
+  transition: transform 0.3s;
+}
+
+.nav-links li a:hover {
+  transform: translateZ(10px);
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #00eaff;
+  transition: width 0.4s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* RESUME BUTTON */
+.resume-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  transition: 0.4s;
+}
+
+/* ----------------------------------media query navbar---------------------------------------------------- */
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: linear-gradient(145deg, #141e30, #243b55);
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+} 
+/* SMALL DEVICES (phones) */
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 10px;
+  }
+}
+
+/* MEDIUM DEVICES (large phones / small tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav-links {
+    gap: 15px;
+  }
+} 
+
+/* LARGE DEVICES (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-links {
+    gap: 18px;
+  }
+}
+
+/* LAPTOP & DESKTOP */
+@media (min-width: 1025px) {
+  .nav-links {
+    gap: 25px;
+  }
+}
+
+
+/* ========================================HOME SECTION========================================================== */
+
+
+section{
+    width: 100%;
+    min-height: 100vh;
+}
+/* home section */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Home{
+    width: 100%;
+    height: 100vh;
+    background:
+    url('./img/homebg.jpg')  center center; /* Clear background */
+    background-size: cover;
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: whitesmoke;
+    position: relative;
+    overflow: hidden;
+    perspective: 1500px; /* 3D perspective */
+}
+#Home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6); /* Dark overlay for contrast */
+    pointer-events: none;
+}
+
+/* Hero Text 3D + Float */
+#Home p{
+    position: absolute;
+    font-size: 90px;
+    opacity: 0;
+    transform: translateZ(0) rotateX(0deg) rotateY(0deg);
+    animation: text3D 16s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(0,0,0,.7); /* ensures readability */
+}
+#Home h6{
+    position: absolute;
+    bottom: 30px;
+    font-size: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0,0,0,.7);
+}
+/* Delay for each line */
+#Home p:nth-child(1){ animation-delay: 0s; }
+#Home p:nth-child(2){ animation-delay: 4s; }
+#Home p:nth-child(3){ animation-delay: 8s; }
+#Home p:nth-child(4){ animation-delay: 12s; }
+
+/* 3D Floating Animation */
+@keyframes text3D{
+    0%{
+        opacity: 0;
+        transform: translateZ(-50px) rotateX(-10deg) rotateY(10deg);
+    }
+    10%{
+        opacity: 1;
+        transform: translateZ(0px) rotateX(0deg) rotateY(0deg);
+    }
+    30%{
+        opacity: 1;
+        transform: translateZ(20px) rotateX(5deg) rotateY(-5deg);
+    }
+    40%{
+        opacity: 0;
+        transform: translateZ(-50px) rotateX(-10deg) rotateY(10deg);
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+/* Highlighted Text */
+#Home span{
+    color: #0dcfe4ac; /* Gold */
+    text-shadow: 0 0 25px #dfddd1;
+    transform: translateZ(30px); /* depth effect */
+    display: inline-block;
+}
+
+/* Responsive */
+@media screen and (max-width:576px){
+    #Home p{
+        font-size: 50px;
+        text-align: center;
+        padding: 0 10px;
+    }
+}
+@media (max-width: 360px) {
+    #Home p {
+        font-size: 38px;
+        text-align: center;
+        padding: 0 12px;
+    }
+
+    #Home h6 {
+        font-size: 14px;
+    }
+}
+@media (min-width: 361px) and (max-width: 576px) {
+    #Home p {
+        font-size: 50px;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    #Home h6 {
+        font-size: 16px;
+    }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+    #Home p {
+        font-size: 60px;
+    }
+
+    #Home h6 {
+        font-size: 18px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    #Home p {
+        font-size: 75px;
+    }
+
+    #Home h6 {
+        font-size: 19px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+    #Home p {
+        font-size: 90px;
+    }
+}
+@media (min-width: 1441px) {
+    #Home p {
+        font-size: 110px;
+    }
+
+    #Home h6 {
+        font-size: 22px;
+    }
+}
+
+
+/* =================================== 3D ABOUT SECTION================================================ ===== */
+
+
+#about-3d{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #000);
+   
+    perspective: 1200px;
+}
+
+/* 3D Card */
+.card-3d{
+    width: 350px;
+    height: 450px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+/* Hover Flip */
+.card-3d:hover{
+    transform: rotateY(180deg);
+}
+
+/* Card Faces */
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* Front */
+.card-front{
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: #fff;
+}
+
+.card-front img{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid rgba(255,255,255,.6);
+}
+
+.card-front h2{
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.card-front p{
+    opacity: .9;
+}
+
+/* Back */
+.card-back{
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: #fff;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.card-back h1{
+    margin-bottom: 15px;
+}
+
+/* Mobile */
+/* @media (max-width: 576px){
+    .card-3d{
+        width: 300px;
+        height: 400px;
+    }
+} */
+ @media (max-width: 360px) {
+    .card-3d {
+        width: 260px;
+        height: 360px;
+    }
+
+    .card-front img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .card-front h2 {
+        font-size: 20px;
+    }
+}
+@media (min-width: 361px) and (max-width: 576px) {
+    .card-3d {
+        width: 300px;
+        height: 400px;
+    }
+
+    .card-front img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .card-front h2 {
+        font-size: 22px;
+    }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+    .card-3d {
+        width: 320px;
+        height: 420px;
+    }
+
+    .card-front img {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card-3d {
+        width: 340px;
+        height: 440px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .card-3d {
+        width: 350px;
+        height: 450px;
+    }
+}
+@media (min-width: 1441px) {
+    .card-3d {
+        width: 400px;
+        height: 500px;
+    }
+
+    .card-front img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .card-front h2 {
+        font-size: 28px;
+    }
+}
+
+
+
+/* Section title education */
+
+
+#education h1.display-1 {
+    font-weight: 500;
+    margin-bottom: 60px;
+    color: #ffffff;
+}
+
+/* Card spacing */
+#education .cardy {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+    border: none;
+    box-shadow: 10px 15px 30px rgba(0, 242, 255, 0.12);
+    overflow: hidden;
+    background: rgba(15, 32, 39, 0.85);
+    box-shadow: 0 15px 40px rgba(0, 242, 255, 0.12);
+    transition: all 0.4s ease;
+}
+
+/* Hover animation */
+#education .cardy:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(0, 242, 255, 0.22);
+}
+
+/* Card header */
+#education .card-header {
+    background: linear-gradient(135deg, #0575e6, #00f260);
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    border-bottom: none;
+}
+
+#education .card-header h1 {
+    font-size: 36px;
+    margin: 0;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* Card body */
+#education .card-body {
+    padding: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#education .card-body h3 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+#education .card-body h4 {
+    font-size: 18px;
+    color: #c9f7ff;
+    margin: 10px 0;
+}
+
+#education .card-body h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00f2ff;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    #education {
+        padding: 50px 0;
+    }
+
+    #education h1.display-1 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    #education .cardy {
+        margin: 15px;
+    }
+
+    #education .card-header h1 {
+        font-size: 24px;
+    }
+
+    #education .card-body h3 {
+        font-size: 18px;
+    }
+
+    #education .card-body h4,
+    #education .card-body h5 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #education {
+        padding: 60px 0;
+    }
+
+    #education h1.display-1 {
+        font-size: 50px;
+    }
+
+    #education .cardy {
+        margin: 20px;
+    }
+
+    #education .card-header h1 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    #education {
+        padding: 70px 0;
+    }
+
+    #education h1.display-1 {
+        font-size: 60px;
+    }
+
+    #education .card-header h1 {
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    #education h1.display-1 {
+        font-size: 70px;
+    }
+
+    #education .card-header h1 {
+        font-size: 34px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    #education h1.display-1 {
+        font-size: 80px;
+    }
+
+    #education .card-header h1 {
+        font-size: 36px;
+    }
+}
+ 
+
+/* ===== 3D CONTACT SECTION ==================================================================================== */
+
+.contact-container {
+  display: flex;
+  gap: 30px;
+  padding: 60px;
+  justify-content: center;
+  perspective: 1200px;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #000);
+}
+.contact-container h2{
+    color: white;
+}
+
+/* 3D CARD */
+.card {
+  width: 350px;
+  padding: 30px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #141e30, #243b55);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease, box-shadow 0.6s;
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  padding-top: 25px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin: 25px 0;
+}
+input{
+    margin-top: 25px !important;
+}
+textarea{
+    margin-top:50px !important;
+    resize: 25%;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+form button{
+    margin-top: 100px;
+
+}
+button:hover {
+  transform: translateY(-3px);
+}
+
+/* SOCIAL LINKS */
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.4s ease;
+}
+
+.social-links a i {
+  font-size: 20px;
+}
+
+.social-links a:hover {
+  transform: translateX(10px) scale(1.05);
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+}
+
+/* THANK YOU */
+.hidden {
+  display: none;
+}
+/* =================================
+   Extra Small Devices (≤ 480px)
+   Small Phones
+   ================================= */
+@media screen and (max-width: 480px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 30px 15px;
+    gap: 20px;
+    perspective: none;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+    transform: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  input, textarea {
+    padding: 10px;
+    margin: 15px 0;
+  }
+
+  textarea {
+    margin-top: 30px !important;
+  }
+
+  form button {
+    margin-top: 40px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+/* =================================
+   Small Devices (481px – 768px)
+   Phones
+   ================================= */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 40px 25px;
+    gap: 25px;
+    perspective: none;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+  }
+
+  form button {
+    margin-top: 60px;
+  }
+}
+
+/* =================================
+   Medium Devices (769px – 992px)
+   Tablets
+   ================================= */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .contact-container {
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 30px;
+  }
+
+  .card {
+    width: 320px;
+  }
+
+  form button {
+    margin-top: 70px;
+  }
+}
+
+/* =================================
+   Large Devices (993px – 1200px)
+   Laptops / Small Desktops
+   ================================= */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  .contact-container {
+    padding: 60px;
+    gap: 30px;
+  }
+
+  .card {
+    width: 340px;
+  }
+}
+
+/* =================================
+   Extra Large Devices (1201px – 1600px)
+   Desktops
+   ================================= */
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  .contact-container {
+    padding: 80px;
+  }
+
+  .card {
+    width: 360px;
+  }
+}
+
+/* =================================
+   Ultra Large Devices (1601px+)
+   2K / 4K Screens
+   ================================= */
+@media screen and (min-width: 1601px) {
+  .contact-container {
+    padding: 100px;
+    gap: 40px;
+  }
+
+  .card {
+    width: 400px;
+  }
+}
+/* ======================================== 3D PROJECTS SECTION ================================================ */
+
+/* ======================================== FOOTER SECTION ================================================ */
+
+/* ===== FOOTER ===== */
+.portfolio-footer {
+  background: radial-gradient(circle at top, #0f2027, #203a43, #000);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.footer-content p {
+  opacity: 0.85;
+  margin-bottom: 15px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-social a {
+  width: 45px;
+  height: 45px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  transition: all 0.4s ease;
+}
+
+.footer-social a:hover {
+  background: #00c6ff;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+copyright {
+  font-size: 14px;
+  opacity: 0.7;
+}
+/* =================================
+   Extra Small Devices (≤ 480px)
+   Small Phones
+   ================================= */
+@media screen and (max-width: 480px) {
+  portfolio-footer {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .footer-content h3 {
+    font-size: 18px;
+  }
+
+  .footer-content p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .footer-social {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .footer-social a {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  copyright {
+    font-size: 12px;
+  }
+}
+
+/* =================================
+   Small Devices (481px – 768px)
+   Large Phones / Small Tablets
+   ================================= */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  portfolio-footer {
+    padding: 35px 15px;
+  }
+
+  .footer-content h3 {
+    font-size: 20px;
+  }
+
+  .footer-content p {
+    font-size: 14px;
+  }
+
+  .footer-social {
+    gap: 15px;
+  }
+
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+  }
+
+  copyright {
+    font-size: 13px;
+  }
+}
+
+/* =================================
+   Medium Devices (769px – 992px)
+   Tablets / Small Laptops
+   ================================= */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  portfolio-footer {
+    padding: 40px 20px;
+  }
+
+  .footer-content h3 {
+    font-size: 22px;
+  }
+
+  .footer-content p {
+    font-size: 15px;
+  }
+
+  .footer-social a {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  copyright {
+    font-size: 14px;
+  }
+}
+
+/* =================================
+   Large Devices (993px – 1200px)
+   Laptops / Desktops
+   ================================= */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  portfolio-footer {
+    padding: 50px 30px;
+  }
+
+  .footer-content h3 {
+    font-size: 24px;
+  }
+
+  .footer-content p {
+    font-size: 16px;
+  }
+
+  .footer-social a {
+    width: 50px;
+    height: 50px;
+    font-size: 19px;
+  }
+
+  copyright {
+    font-size: 14px;
+  }
+}
+
+/* =================================
+   Extra Large Devices (1201px – 1600px)
+   Large Desktops
+   ================================= */
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  portfolio-footer {
+    padding: 60px 50px;
+  }
+
+  .footer-content h3 {
+    font-size: 26px;
+  }
+
+  .footer-content p {
+    font-size: 16px;
+  }
+
+  .footer-social a {
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+  }
+
+  copyright {
+    font-size: 15px;
+  }
+}
+
+/* =================================
+   Ultra Large Devices (1601px+)
+   2K / 4K Screens
+   ================================= */
+@media screen and (min-width: 1601px) {
+  portfolio-footer {
+    padding: 70px 80px;
+  }
+
+  .footer-content h3 {
+    font-size: 28px;
+  }
+
+  .footer-content p {
+    font-size: 17px;
+  }
+
+  .footer-social a {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+  }
+
+  copyright {
+    font-size: 16px;
+  }
+}
